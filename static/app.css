@@ -1,0 +1,27 @@
+body {
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+     padding: 0;
+     margin: 0;
+}
+
+h0, h1, h2, h3 {
+    font-family: 'Abril Fatface';
+    letter-spacing: 110%;
+}
+
+h0 {
+    font-size: 72px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 16px;
+}
