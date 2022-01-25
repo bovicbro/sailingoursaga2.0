@@ -10,15 +10,18 @@
 <Footer/>
 
 <style type="text/css" media="screen">
+
  .content {
-     /* border: 1px solid black; */
-     margin: 2em;
+     padding-top: 54px;
+     margin-left: 2em;
+     margin-right: 2em;
+     min-height: 100vh;
  }
 
  @media (max-width: 500px) {
      .content {
-         margin: 0;
-         padding-top: 54px;
+         margin-left: 0;
+         margin-right: 0;
      }
  }
 

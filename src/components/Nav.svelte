@@ -1,5 +1,6 @@
 <script type="text/javascript">
  let menuOpen = false;
+ import {fade} from 'svelte/motion'
 
  function toggleMenu() {
      menuOpen = !menuOpen;
@@ -17,7 +18,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </a>
-        <div class="links {menuOpen ? "active" : "" }">
+        <div class="links {menuOpen ? "active" : "" }" transition:fade="{{ duration: 200 }}">
             <ul>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
@@ -93,20 +94,28 @@
 
      .links {
          display: none;
-         width: 100%;
+         position: fixed;
+         right: 0em;
+         top: 54px;
+         background: white;
+         margin: 0;
+     box-shadow: -2px 4px 5px 0px #a4a4a4;
      }
 
      .links ul {
          flex-direction: column;
          width: 100%;
+         padding: 0;
+         margin: 1em;
      }
 
      .links li {
-         text-align: center;
+         margin: 0.5em;
      }
 
      .links.active {
          display: flex;
+         transition: background 1s;
      }
 
  }

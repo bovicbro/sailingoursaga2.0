@@ -22,21 +22,13 @@
  }
 
  h1 {
+     vertical-align: middle;
      text-align: left;
-     margin-top: 2em;
-     margin-bottom: auto;
-     margin-left: 25vw;
+     margin-left: 20vw;
      margin-right: auto;
      width: 3em;
      background: linear-gradient(165.2deg, #1DD6FF 7.46%, #D5FE7E 95.95%);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
 }
-
- @media (min-width: 500px) {
-     .hero {
-         height: 40vh
-     }
-
- }
 </style>

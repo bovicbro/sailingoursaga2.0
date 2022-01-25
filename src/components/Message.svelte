@@ -13,4 +13,11 @@
      margin: 4em auto 4em auto;
      max-width: 14em;
  }
+ h2 {
+     margin-bottom: 0;
+ }
+
+ p {
+     margin-top: 0.5em;
+ }
 </style>
