@@ -1,5 +1,5 @@
 <script type="text/javascript">
- export let imgURL = 'profile.jpg'
+ export let imgURL = 'profile.png'
  export let altText = 'Picture of person'
  export let name = 'Default name'
  export let text = 'Eu, facilisis sed odio morbi quis commodo? Vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat.'

@@ -1,6 +1,5 @@
 <script type="text/javascript">
  let menuOpen = false;
- import {fade} from 'svelte/motion'
 
  function toggleMenu() {
      menuOpen = !menuOpen;
@@ -13,16 +12,16 @@
         <div class="brandName">
             <a href="/"><h3>Sailing our Saga</h3></a>
         </div>
-        <a on:click={() => toggleMenu()} href="" class="toggleButton">
+        <a on:click={() => toggleMenu()} href='' class="toggleButton">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </a>
-        <div class="links {menuOpen ? "active" : "" }" transition:fade="{{ duration: 200 }}">
+        <div class="links {menuOpen ? "active" : "" }">
             <ul>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
-                <li><a href="/support-us">Support us</a></li>
+                <li><a href="/blog">Blog</a></li>
             </ul>
         </div>
     </div>

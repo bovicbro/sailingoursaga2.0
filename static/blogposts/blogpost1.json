@@ -1,0 +1,21 @@
+{
+    "title": "This is title of blog",
+    "synopsis": "",
+    "coverImage": "/ocean.jpg",
+    "published": 0,
+    "content": [
+        {
+            "type": "paragraph",
+            "text": "lorem ispum"
+        },
+        {
+            "type": "quote",
+            "quote": "This is a very good quote",
+            "origin": "Victor Broman, 2022"
+        },
+        {
+            "type": "paragraph",
+            "text": "lorem ispum"
+        }
+    ]
+}

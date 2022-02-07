@@ -13,9 +13,11 @@
 
  .content {
      padding-top: 54px;
-     margin-left: 2em;
-     margin-right: 2em;
      min-height: 100vh;
+     width: 80vw;
+     display: flex;
+     align-content: center;
+     margin: 2em 10em;
  }
 
  @media (max-width: 500px) {
