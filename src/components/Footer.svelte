@@ -27,10 +27,11 @@
  }
 
  .columns {
+     max-width: 50em;
      display: flex;
      flex-direction: row;
      justify-content: space-around;
-     margin: 0 1em;
+     margin: 0 auto;
  }
 
  .column{

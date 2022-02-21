@@ -1,5 +1,5 @@
 {
-    "title": "This is title of blog",
+    "title": "How to tie a bowline",
     "synopsis": "",
     "coverImage": "/ocean.jpg",
     "published": 0,
@@ -10,12 +10,26 @@
         },
         {
             "type": "quote",
-            "quote": "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.",
+            "quote": "It is fun to tie knots!",
             "origin": "Mark Twain"
         },
         {
             "type": "paragraph",
+            "text": "Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet, consectetur. Orci, ac auctor augue mauris augue neque, gravida in fermentum et, sollicitudin ac orci phasellus egestas tellus rutrum tellus?"
+        },
+        {
+            "type": "paragraph",
             "text": "Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet, consectetur. Orci, ac auctor augue mauris augue neque, gravida in fermentum et, sollicitudin ac orci phasellus egestas tellus rutrum tellus? Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet, consectetur. Orci, ac auctor augue mauris augue neque, gravida in fermentum et, sollicitudin ac orci phasellus egestas tellus rutrum tellus?"
+        },
+        {
+            "type": "image",
+            "url": "/bowline.jpg",
+            "text": "This is an image of a bowline",
+            "alt": "an image of a bowline knot"
+        },
+        {
+            "type": "paragraph",
+            "text": "Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet, consectetur. Orci, ac auctor augue mauris augue neque, gravida in fermentum et, sollicitudin ac orci phasellus egestas tellus rutrum tellus?"
         }
     ]
 }

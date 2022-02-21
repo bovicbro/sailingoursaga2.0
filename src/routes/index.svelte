@@ -6,7 +6,9 @@
 
 
 <Hero image="ocean.jpg" text="This is the title"/>
-<Message
-    title="Fill your sails with the wind and cast of the lines, the ocean is calling"
-    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales metus urna, id placerat enim ullamcorper tincidunt."/>
-<Profile name="Antonia Nilsson"/>
+<div class="content">
+    <Message
+        title="Fill your sails with the wind and cast of the lines, the ocean is calling"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales metus urna, id placerat enim ullamcorper tincidunt."/>
+    <Profile name="Antonia Nilsson"/>
+</div>

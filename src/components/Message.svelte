@@ -10,8 +10,7 @@
 
 <style type="text/css" media="screen">
  .message {
-     margin: 2em 6em;
-     max-width: 30rem;
+     margin: 2em 0em;
  }
  h2 {
      margin-bottom: 0;

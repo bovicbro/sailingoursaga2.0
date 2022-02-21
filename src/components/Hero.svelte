@@ -10,8 +10,8 @@
 
 <style type="text/css" media="screen">
  .hero {
-     height: 40vh;
-     margin: 0;
+     max-width:60em;
+     margin: 0 auto;
      object-fit: contains;
      display: flex;
      flex-direction: column;
@@ -22,7 +22,7 @@
  }
 
  h1 {
-     vertical-align: middle;
+     /* vertical-align: middle; */
      text-align: left;
      margin-left: 20vw;
      margin-right: auto;

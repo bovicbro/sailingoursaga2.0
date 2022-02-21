@@ -1,12 +1,20 @@
 <script type="text/javascript">
- export let image = '';
+ export let url = '';
  export let alt = '';
  export let text = '';
 </script>
 
-<img src="image" alt="alt" />
-<span>text</span>
+<div class="image">
+    <img src={url} alt={alt} />
+    <span>{text}</span>
+</div>
 
 <style type="text/css" media="screen">
+ img {
+     width: 100%;
+ }
 
+ span {
+     font-style: italic;
+ }
 </style>

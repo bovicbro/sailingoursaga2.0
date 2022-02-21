@@ -10,7 +10,7 @@
 <nav class="navbar">
     <div class="navInner">
         <div class="brandName">
-            <a href="/"><h3>Sailing our Saga</h3></a>
+            <a href="/"><h3>SAILING OUR SAGA</h3></a>
         </div>
         <a on:click={() => toggleMenu()} href='' class="toggleButton">
             <span class="bar"></span>
@@ -41,7 +41,9 @@
  .navInner {
      display: flex;
      justify-content: space-between;
+     max-width: 60em;
      align-items: center;
+     margin: 0 auto;
  }
 
  .links ul {
