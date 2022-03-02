@@ -18,7 +18,7 @@
             <span class="bar"></span>
         </a>
         <div class="links {menuOpen ? "active" : "" }">
-            <ul>
+            <ul on:click={() => toggleMenu()}>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/blog">Blog</a></li>
@@ -83,7 +83,7 @@
      border-radius: 40px;
  }
 
- @media (max-width: 500px) {
+ @media (max-width: 600px) {
      .toggleButton {
          display: flex;
      }
@@ -107,18 +107,17 @@
          flex-direction: column;
          width: 100%;
          padding: 0;
-         margin: 1em;
+         margin: 0em;
      }
 
-     .links li {
-         margin: 0.5em;
-     }
 
      .links.active {
          display: flex;
-         transition: background 1s;
      }
 
+     .links a {
+         padding: 1em 2em;
+     }
  }
 
 </style>

@@ -41,7 +41,7 @@ h3 {
      /* justify-content: flex-start; */
  }
 
- @media (max-width: 500px) {
+ @media (max-width: 600px) {
      .content {
          width: 80vw;
          margin: 0 auto;

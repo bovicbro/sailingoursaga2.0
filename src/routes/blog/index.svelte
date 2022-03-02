@@ -1,16 +1,37 @@
 <script type="text/javascript">
+ import { fade } from 'svelte/transition';
  import BlogpostThumbnail from "../../components/BlogpostThumbnail.svelte"
  let blogposts = [
      {title: "How to tie a bowline",
      synopsis: "This is synopsis",
      image: "/bowline.jpg",
-     slug: "how-to-tie-a-bowline"
+     slug: "how-to-tie-a-bowline",
+     tags: ["tag1"]
      },
      {title: "Blogpost1",
      synopsis: "This is synopsis",
      image: "/ocean.jpg",
-     slug: "blogpost1"
-     }
+     slug: "blogpost1",
+     tags: ["tag1"]
+     },
+     {title: "This is test",
+     synopsis: "Diam, vulputate ut pharetra sit amet, aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean.",
+     image: "/ocean.jpg",
+     slug: "blogpost1",
+     tags: ["tag1"]
+     },
+     {title: "Important blog",
+     synopsis: "This is synopsis",
+     image: "/ocean.jpg",
+     slug: "blogpost1",
+     tags: ["tag1"]
+     },
+     {title: "Blogpost2",
+     synopsis: "This is synopsis",
+     image: "/ocean.jpg",
+     slug: "blogpost1",
+     tags: ["tag1"]
+     },
  ]
 
 let q = '';
@@ -22,22 +43,31 @@ let q = '';
 $: list = filterFunction(blogposts,q)
 
 </script>
-
 <div class="listContent">
     <div class="listHeader">
         <h2>Blog!</h2>
         <div class="filter-search">
             <input bind:value={q} type="text" class="search">
-	    </div>
+        </div>
     </div>
     <div class="list">
+        {#if list == ''}
+            <span class="info" in:fade="{{duration: 200}}">No blogpost matches your search</span>
+        {/if}
         {#each list as blogpost}
-            <BlogpostThumbnail title={blogpost.title} synopsis={blogpost.synopsis} slug={blogpost.slug} image={blogpost.image}/>
+            <div>
+                <BlogpostThumbnail title={blogpost.title} synopsis={blogpost.synopsis} slug={blogpost.slug} image={blogpost.image}/>
+            </div>
         {/each}
     </div>
 </div>
 
 <style type="text/css" media="screen">
+ .info {
+     width: 100%;
+     text-align:center;
+     position: absolute;
+ }
 
  .listHeader {
      width: 50vw;
@@ -70,6 +100,10 @@ $: list = filterFunction(blogposts,q)
      min-height: 100vh;
      max-width: 60em;
      margin: auto;
+ }
+
+ input {
+
  }
 
 </style>
