@@ -5,7 +5,7 @@
 </script>
 
 
-<Hero image="ocean.jpg" text="This is the title"/>
+<Hero image="/ocean.jpg" text="This is the title"/>
 <div class="content">
     <Message
         title="Fill your sails with the wind and cast of the lines, the ocean is calling"
