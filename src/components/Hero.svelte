@@ -4,7 +4,7 @@
  // export let imageAlt = ''
 </script>
 
-<div class="hero" background-image=url({image})>
+<div class="hero" style="background-image:url('{image}')">
     <h1>{text}</h1>
 </div>
 
@@ -16,7 +16,7 @@
      display: flex;
      flex-direction: column;
      justify-content: center;
-     background-image: url('ocean.jpg');
+     /* background-image: url('ocean.jpg'); */
      background-size: cover;
      background-position: top, center;
  }
