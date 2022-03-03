@@ -35,12 +35,13 @@
 
  .blogpost {
      transition: box-shadow 0.25s;
-     min-width: 20em;
+     /* min-width: 20em; */
+     widht: 100%;
      margin: 0.5em;
      border-radius: 2px;
      display: box;
      box-shadow: 1px 1px 2px 1px #33333380;
-     width: 25em;
+     max-width: 25em;
  }
 
  h3 {
@@ -49,7 +50,7 @@
 
  img {
      width: 100%;
-     height: 12em;
+     height: auto;
      object-fit: cover;
      margin-bottom: 0;
  }

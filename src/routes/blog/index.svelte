@@ -10,8 +10,7 @@
      },
      {title: "Blogpost1",
      synopsis: "Looking at this blogpost you might learn something new, it is very interesting",
-     image: "/ocean.jpg",
-     slug: "blogpost1",
+     image: "/ocean.jpg", slug: "blogpost1",
      tags: ["tag1"]
      },
      {title: "This is test",
@@ -55,7 +54,7 @@ $: list = filterFunction(blogposts,q)
             <span class="info" in:fade="{{duration: 200}}">No blogpost matches your search</span>
         {/if}
         {#each list as blogpost}
-            <div>
+            <div class="listItem">
                 <BlogpostThumbnail title={blogpost.title} synopsis={blogpost.synopsis} slug={blogpost.slug} image={blogpost.image}/>
             </div>
         {/each}
@@ -68,6 +67,10 @@ $: list = filterFunction(blogposts,q)
      text-align:center;
      position: absolute;
  }
+
+ /* .listItem {
+    margin: 1em;
+    } */
 
  .listHeader {
      width: 50vw;
