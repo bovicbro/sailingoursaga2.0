@@ -9,7 +9,6 @@
          }
      }
  }
-
 </script>
 
 <script type="text/javascript">
@@ -29,9 +28,3 @@
         {/if}
     {/each}
 </div>
-
-<style type="text/css" media="screen">
- p {
-     width: 100%;
- }
-</style>

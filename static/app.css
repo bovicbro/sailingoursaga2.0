@@ -5,10 +5,6 @@ body {
      margin: 0;
 }
 
-p {
-
-}
-
 h0, h1, h2, h3 {
     font-family: 'Abril Fatface';
     letter-spacing: 110%;
@@ -33,17 +29,8 @@ h3 {
 
  .content {
      min-height: 100vh;
-     width: 50vw;
+     width: 80vw;
      max-width: 30em;
-     /* display: flex; */
      margin: 0 auto;
-     /* flex-wrap: wrap; */
-     /* justify-content: flex-start; */
  }
 
- @media (max-width: 600px) {
-     .content {
-         width: 80vw;
-         margin: 0 auto;
-     }
- }

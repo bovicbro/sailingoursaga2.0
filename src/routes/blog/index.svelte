@@ -3,13 +3,13 @@
  import BlogpostThumbnail from "../../components/BlogpostThumbnail.svelte"
  let blogposts = [
      {title: "How to tie a bowline",
-     synopsis: "This is synopsis",
+     synopsis: "This is synopsis and it can be of different length",
      image: "/bowline.jpg",
      slug: "how-to-tie-a-bowline",
      tags: ["tag1"]
      },
      {title: "Blogpost1",
-     synopsis: "This is synopsis",
+     synopsis: "Looking at this blogpost you might learn something new, it is very interesting",
      image: "/ocean.jpg",
      slug: "blogpost1",
      tags: ["tag1"]
