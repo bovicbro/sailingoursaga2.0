@@ -1,12 +1,21 @@
 <script type="text/javascript">
  export let text = 'Default'
  export let image = ''
+ import {fade} from "svelte/transition";
+ import {draw} from "svelte/transition";
  // export let imageAlt = ''
+ import { onMount } from 'svelte';
+
+ let ready = false;
+ onMount(() => ready = true);
 </script>
 
 <div class="hero" style="background-image:url('{image}')">
     <div class="container">
-        <h1>{text}</h1>
+        {#if ready}
+            <h1 in:fade="{{duration: 1000, intro: true}}">{text}</h1>
+            <h2 in:fade="{{duration: 1600, delay: 1000}}">This is a test of a text that will fit next to the title to make the composition look great. The text needs to be formatted correctly.</h2>
+        {/if}
     </div>
 </div>
 
@@ -14,26 +23,35 @@
  .hero {
      margin: 0 auto;
      object-fit: contains;
-     display: flex;
      flex-direction: column;
      justify-content: center;
      background-size: cover;
      background-position: top, center;
-     height: 60vh;
+     height: calc(100vh - 50px);
+     display: flex;
  }
 
  .container {
      width: 80vw;
      max-width: 30em;
      margin: 0 auto;
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     align-items: center;
  }
 
  h1 {
-     vertical-align: middle;
-     text-align: left;
      width: 4em;
      background: linear-gradient(165.2deg, #1DD6FF 7.46%, #D5FE7E 95.95%);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
 }
+
+ h2 {
+     width: 13em;
+     color: #fafafa;
+     margin-top: 0;
+ }
+
 </style>
