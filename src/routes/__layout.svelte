@@ -1,18 +1,16 @@
 <script type="text/javascript">
- import Nav from '../components/Nav.svelte'
- import Footer from '../components/Footer.svelte'
+	import Nav from '../components/Nav.svelte';
+	import Footer from '../components/Footer.svelte';
 </script>
 
-<Nav/>
+<Nav />
 <main>
-    <slot/>
+	<slot />
 </main>
-<Footer/>
+<Footer />
 
 <style type="text/css" media="screen">
-
- main {
-     padding-top: 54px;
- }
-
+	main {
+		padding-top: 54px;
+	}
 </style>

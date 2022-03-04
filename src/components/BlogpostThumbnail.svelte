@@ -41,7 +41,7 @@
      border-radius: 2px;
      display: box;
      box-shadow: 1px 1px 2px 1px #33333380;
-     max-width: 25em;
+     max-width: 28em;
  }
 
  h3 {

@@ -1,10 +1,12 @@
 <script type="text/javascript">
- export let title = "Default title"
- export let text = "Default text"
+ export let title;
+ export let text;
 </script>
 
 <div class="message">
-    <h2>{title}</h2>
+    {#if title}
+        <h2>{title}</h2>
+    {/if}
     <p>{text}</p>
 </div>
 

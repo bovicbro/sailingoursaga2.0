@@ -10,24 +10,24 @@
      },
      {title: "Blogpost1",
      synopsis: "Looking at this blogpost you might learn something new, it is very interesting",
-     image: "/ocean.jpg", slug: "blogpost1",
+     image: "/ocean2.jpg", slug: "blogpost1",
      tags: ["tag1"]
      },
      {title: "This is test",
      synopsis: "Diam, vulputate ut pharetra sit amet, aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean.",
-     image: "/ocean.jpg",
+     image: "/ocean2.jpg",
      slug: "blogpost1",
      tags: ["tag1"]
      },
      {title: "Important blog",
      synopsis: "This is synopsis",
-     image: "/ocean.jpg",
+     image: "/ocean2.jpg",
      slug: "blogpost1",
      tags: ["tag1"]
      },
      {title: "Blogpost2",
      synopsis: "This is synopsis",
-     image: "/ocean.jpg",
+     image: "/ocean2.jpg",
      slug: "blogpost1",
      tags: ["tag1"]
      },
