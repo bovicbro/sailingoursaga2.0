@@ -2,7 +2,6 @@
  export let text = 'Default'
  export let image = ''
  import {fade} from "svelte/transition";
- import {draw} from "svelte/transition";
  // export let imageAlt = ''
  import { onMount } from 'svelte';
 
@@ -10,7 +9,7 @@
  onMount(() => ready = true);
 </script>
 
-<div class="hero" style="background-image:url('{image}')">
+<div in:fade="{{intro: true, duration: 250}}" class="hero" style="background-image:url('{image}')">
     <div class="container">
         {#if ready}
             <h1 in:fade="{{duration: 1000, intro: true}}">{text}</h1>
@@ -32,7 +31,7 @@
  }
 
  .container {
-     width: 80vw;
+     width: 85vw;
      max-width: 30em;
      margin: 0 auto;
      display: flex;
