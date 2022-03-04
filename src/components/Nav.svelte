@@ -26,8 +26,13 @@
         </div>
     </div>
 </nav>
+<div class="padding" />
 
 <style type="text/css" media="screen">
+
+.padding {
+    height: 3em;
+}
 
  .navbar {
      box-shadow: 0px 0px 8px 0px #a4a4a4;
@@ -36,6 +41,7 @@
      width: 100%;
      background: white;
      top: 0;
+     height: 3em;
  }
 
  .navInner {
@@ -44,6 +50,7 @@
      max-width: 60em;
      align-items: center;
      margin: 0 auto;
+     height: 100%;
  }
 
  .links ul {
@@ -97,7 +104,7 @@
          display: none;
          position: fixed;
          right: 0em;
-         top: 62px;
+         top: 3em;
          background: white;
          margin: 0;
      box-shadow: -2px 4px 5px 0px #a4a4a4;
@@ -118,6 +125,7 @@
      .links a {
          padding: 1em 2em;
      }
+
  }
 
 </style>

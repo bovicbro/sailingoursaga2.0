@@ -12,8 +12,8 @@
 <div class="hero" style="background-image:url('{image}')">
     <div class="container">
         {#if ready}
-            <h1 in:fade="{{duration: 1000, intro: true}}">{text}</h1>
-            <h2 in:fade="{{duration: 1600, delay: 1000}}">This is a test of a text that will fit next to the title to make the composition look great. The text needs to be formatted correctly.</h2>
+            <h1 in:fade="{{duration: 1600}}">{text}</h1>
+            <h2 in:fade="{{duration: 2000, delay: 1100}}">This is a test of a text that will fit next to the title to make the composition look great. The text needs to be formatted correctly.</h2>
         {/if}
     </div>
 </div>
@@ -26,7 +26,7 @@
      justify-content: center;
      background-size: cover;
      background-position: top, center;
-     height: calc(100vh - 63px);
+     height: calc(100vh - 3em);
      display: flex;
  }
 

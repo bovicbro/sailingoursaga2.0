@@ -10,7 +10,4 @@
 <Footer />
 
 <style type="text/css" media="screen">
-	main {
-		padding-top: 63px;
-	}
 </style>
