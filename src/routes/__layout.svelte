@@ -11,6 +11,6 @@
 
 <style type="text/css" media="screen">
 	main {
-		padding-top: 54px;
+		padding-top: 63px;
 	}
 </style>

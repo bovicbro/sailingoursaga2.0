@@ -1,7 +1,7 @@
 <script type="text/javascript">
  export let text = 'Default'
  export let image = ''
- import {fade} from "svelte/transition";
+ import {fade, blur} from "svelte/transition";
  // export let imageAlt = ''
  import { onMount } from 'svelte';
 
@@ -9,7 +9,7 @@
  onMount(() => ready = true);
 </script>
 
-<div in:fade="{{intro: true, duration: 250}}" class="hero" style="background-image:url('{image}')">
+<div class="hero" style="background-image:url('{image}')">
     <div class="container">
         {#if ready}
             <h1 in:fade="{{duration: 1000, intro: true}}">{text}</h1>
@@ -26,7 +26,7 @@
      justify-content: center;
      background-size: cover;
      background-position: top, center;
-     height: calc(100vh - 50px);
+     height: calc(100vh - 63px);
      display: flex;
  }
 
@@ -35,7 +35,7 @@
      max-width: 30em;
      margin: 0 auto;
      display: flex;
-     justify-content: space-between;
+     justify-content: flex-start;
      flex-wrap: wrap;
      align-items: center;
  }
@@ -49,7 +49,7 @@
 
  h2 {
      width: 13em;
-     color: #fafafa;
+     color: white;
      margin-top: 0;
  }
 
