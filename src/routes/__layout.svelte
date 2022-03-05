@@ -5,9 +5,14 @@
 
 <Nav />
 <main>
-	<slot />
+	<div class="main">
+		<slot />
+	</div>
 </main>
 <Footer />
 
 <style type="text/css" media="screen">
+ .main {
+	 min-height: 100vh;
+ }
 </style>

@@ -20,10 +20,8 @@
 
  }
  .profile {
-     margin: 1em;
-     width: 300px;
-     margin-left: auto;
-     margin-right: auto;
+     margin: 1em 3em;
+     width: 250px;
      text-align: center;
  }
 </style>
