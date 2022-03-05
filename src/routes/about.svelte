@@ -18,6 +18,9 @@
 </div>
 <div class="content">
     <Image url="/saga-moored.jpg" text="Saga moored in the home port Hovenäset"/>
+    <p>This was our story for many years. We lived in our small apartment in Stockholm, spent the days in an office, met friends on the weekends - life was good. For a few weeks every summer we went sailing and fell back into that daydream.</p>
+    <p>Of course, we knew that there were people doing just that, sailing towards the horizon. We kept talking about going on our own adventure in the future, but did not make any plans. Then March of 2020 hit and everything changed, all over the world. As society shut down we decided to escape our small apartment to stay closer to the nature, and what we love so much, the ocean.</p>
+    <p>We had the opportunity to work from home, and have a place to stay in Antonia’s family’s summerhouse - near our previous boat. From one day to the next we had switched out the busy streets of Stockholm to the quiet alleys of Hovenäset. Everyone kept asking when we were going to come back to Stockholm. We had started to think about something else…</p>
 </div>
 
 <style type="text/css" media="screen">
