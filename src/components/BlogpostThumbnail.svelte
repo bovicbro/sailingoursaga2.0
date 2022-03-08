@@ -41,7 +41,7 @@
      border-radius: 2px;
      display: box;
      box-shadow: 1px 1px 2px 1px #33333380;
-     max-width: 28em;
+     max-width: 22em;
  }
 
  h3 {
@@ -49,9 +49,9 @@
  }
 
  img {
-     width: 100%;
-     height: auto;
      object-fit: cover;
+     max-height: 200px;
+     width: 100%;
      margin-bottom: 0;
  }
 </style>

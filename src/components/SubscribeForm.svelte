@@ -30,7 +30,8 @@
 .subscribe-form {
     display: block;
     text-align: center;
-    margin: 2em;
+    margin: 2em auto;
+    padding: 2em;
 }
 
 .subscribe-form-content {
@@ -47,5 +48,6 @@
 }
  input {
      font-size: 18px;
+     width: 100%;
  }
 </style>

@@ -1,13 +1,13 @@
 <script type="text/javascript">
- export let imgURL = 'profile.png'
- export let altText = 'Picture of person'
  export let name = 'Default name'
+ export let img = 'profile.png'
  export let text = 'Eu, facilisis sed odio morbi quis commodo? Vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat.'
+ export let alt = 'Picture of person'
 
 </script>
 
 <div class="profile">
-    <img src={imgURL} alt={altText} />
+    <img src={img} alt={alt} />
     <h2>{name}</h2>
     <p>{text}</p>
 </div>

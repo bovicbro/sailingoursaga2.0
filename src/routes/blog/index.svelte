@@ -95,13 +95,13 @@ $: list = filterFunction(blogposts,q)
      display: flex;
      margin: 0 auto;
      flex-wrap: wrap;
-     justify-content: space-around;
-     align-items: flex-start;
+     justify-content: space-between;
+     align-items: center;
  }
 
  .listContent {
      min-height: 100vh;
-     max-width: 60em;
+     max-width: 50em;
      margin: auto;
  }
 
