@@ -1,12 +1,16 @@
-
-<span>Check us out on Instagram!</span>
-<a href="https://www.instagram.com/sailingoursaga" target="_blank">@SailingOurSaga</a>
+<div>
+    <span>Check us out on Instagram!</span>
+    <a href="https://www.instagram.com/sailingoursaga" target="_blank">@SailingOurSaga</a>
+</div>
 
 <style type="text/css" media="screen">
+ div {
+     width: 100%;
+ }
  span {
      text-align: center;
      display: block;
-     font-weight: bold;
+     /* font-weight: bold; */
  }
  a {
      text-align: center;
@@ -14,7 +18,7 @@
      font-weight: bold;
      text-decoration: none;
      font-size: 32px;
-     background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+     background:linear-gradient(45deg, #778ae6, #5851db, #b478dd, #e65ba9, #ff70a1, #fd1d1d);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
  }

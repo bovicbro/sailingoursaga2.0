@@ -1,5 +1,9 @@
+<script type="text/javascript">
+ import InstagramLink from "../components/InstagramLink.svelte"
+</script>
 
 <footer>
+    <InstagramLink/>
     <div class="columns">
         <div class="column">
             <ul>

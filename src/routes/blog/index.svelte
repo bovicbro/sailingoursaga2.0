@@ -47,8 +47,6 @@
                          && el.tags.map( tag => selectedTags.indexOf(tag) !== -1 ).indexOf(true) !== -1)
  }
 
-$: list = filterFunction(blogposts,q,selectedTags)
-
  function selectTag (tag) {
      selectedTags.push(tag)
      selectedTags = selectedTags
@@ -58,6 +56,8 @@ $: list = filterFunction(blogposts,q,selectedTags)
      selectedTags.splice(selectedTags.indexOf(tag),1)
      selectedTags = selectedTags
  }
+
+$: list = filterFunction(blogposts,q,selectedTags)
 
 </script>
 
