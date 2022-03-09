@@ -6,30 +6,30 @@
      synopsis: "This is synopsis and it can be of different length",
      image: "/bowline.jpg",
      slug: "how-to-tie-a-bowline",
-     tags: ["tag1"]
+     tags: ["Sailing"]
      },
      {title: "Blogpost1",
      synopsis: "Looking at this blogpost you might learn something new, it is very interesting",
      image: "/ocean2.jpg", slug: "blogpost1",
-     tags: ["tag1"]
+     tags: ["Boat projects"]
      },
      {title: "This is test",
      synopsis: "Diam, vulputate ut pharetra sit amet, aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean.",
      image: "/ocean2.jpg",
      slug: "blogpost1",
-     tags: ["tag1"]
+     tags: ["Destinations"]
      },
      {title: "Important blog",
      synopsis: "This is synopsis",
      image: "/ocean2.jpg",
      slug: "blogpost1",
-     tags: ["tag4"]
+     tags: ["Boat projects"]
      },
      {title: "Blogpost2",
      synopsis: "This is synopsis",
      image: "/ocean2.jpg",
      slug: "blogpost1",
-     tags: ["tag2", "this is a tag"]
+     tags: ["Destinations", "Boat projects"]
      },
  ]
 
@@ -64,16 +64,25 @@ $: list = filterFunction(blogposts,q,selectedTags)
 <!-- HTML -->
 <div class="listContent">
     <div class="listHeader">
-        <h2>Blog!</h2>
+        <h2>Welcome to our blog!</h2>
         <div class="filter-search">
+            <ul>
+                <li>
+            <span>Search: </span>
             <input bind:value={q} type="text" class="search">
-            {#each tags as tag}
-                {#if selectedTags.includes(tag)}
-                    <button class="active" on:click={ () => removeSelectedTag(tag)}>{tag}</button>
-                {:else}
-                    <button class="inactive" on:click={ () => selectTag(tag)}>{tag}</button>
-                {/if}
-            {/each}
+                </li>
+                <li>
+                    <span>Topics: </span>
+                    {#each tags as tag}
+                        {#if selectedTags.includes(tag)}
+                            <button class="tag active" on:click={ () => removeSelectedTag(tag)}>{tag}</button>
+                        {:else}
+                            <button class="tag inactive" on:click={ () => selectTag(tag)}>{tag}</button>
+                        {/if}
+                    {/each}
+
+                </li>
+            </ul>
         </div>
     </div>
     <div class="list">
@@ -94,8 +103,32 @@ $: list = filterFunction(blogposts,q,selectedTags)
 
 <style type="text/css" media="screen">
 
+ input {
+     padding: 0.2em;
+     /* border-radius: 3px; */
+     /* border-style: solid; */
+     font-size: 18px;
+     /* border-color: #bbb; */
+ }
+
+ ul {
+     padding: 0;
+     margin: 0;
+ }
+ li {
+     list-style: none;
+     margin: 1em 0;
+ }
+ .tag {
+     margin: 0.2em;
+     font-size: 18px;
+     padding: 0.3em;
+     border-radius: 4px;
+ }
+
  .active {
-     color: blue;
+     border-color: #bbb;
+     background-color: #bbb;
  }
 
  .info {
