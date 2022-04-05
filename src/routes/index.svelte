@@ -16,6 +16,11 @@
         title="Hi! So happy to see that you found your way to our adventure!"
         text="We are Victor and Antonia, a Swedish couple that always have dreamt about sailing towards the horizon. In August of 2021 we finally set off from our home port Hovenäset on this adventure of a lifetime."/>
     <Image url="/saga-moored.jpg" text="Saga moored in home port Hovenäset" alt="Saga (boat) at a dock by red houses"/>
-    <Message text="On @sailingoursaga on instagram we are documenting our journey, and would love it if you would want to follow and interact with us there for day-to-day updates. If you want to get to know a little bit better, go to about us." />
+    <p>
+        On @sailingoursaga on instagram we are documenting our journey, and would love it if you would want to follow and interact with us there for day-to-day updates.
+    </p>
+    <p>
+        If you want to get to know a little bit better, go to about us.
+    </p>
     <SubscribeForm/>
 </div>

@@ -18,6 +18,7 @@
 </script>
 <div class="content">
     <h2>{blogPost.title}</h2>
+    <span>{blogPost.date}</span>
     {#each blogPost.content as content}
         {#if content.type == "paragraph"}
             <p>{content.text}</p>
