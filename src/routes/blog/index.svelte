@@ -2,74 +2,90 @@
 	import { fade } from 'svelte/transition';
 	import BlogpostThumbnail from '../../components/BlogpostThumbnail.svelte';
 
+    type slug = string;
+
 	type Blogpost = {
 		title: string;
 		synopsis: string;
 		image: string;
-		slug: string;
-		tags: string[];
+		slug: slug;
+		tags?: string[];
+		publicationDate: Date;
 	};
 
- // Mock data for blogposts
+	// Mock data for blogposts
 	let blogposts: Blogpost[] = [
-		{title: "How to tie a bowline",
-		 synopsis: "This is synopsis and it can be of different length",
-		 image: "/bowline.jpg",
-		 slug: "how-to-tie-a-bowline",
-		 tags: ["Sailing"]
-		 },
-		 {title: "Blogpost1",
-		 synopsis: "Looking at this blogpost you might learn something new, it is very interesting",
-		 image: "/ocean2.jpg", slug: "blogpost1",
-		 tags: ["Boat projects"]
-		 },
-		 {title: "This is test",
-		 synopsis: "Diam, vulputate ut pharetra sit amet, aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean.",
-		 image: "/ocean2.jpg",
-		 slug: "blogpost1",
-		 tags: ["Destinations"]
-		 },
-		 {title: "Important blog",
-		 synopsis: "This is synopsis",
-		 image: "/ocean2.jpg",
-		 slug: "blogpost1",
-		 tags: ["Boat projects"]
-		 },
-		 {title: "Blogpost2",
-		 synopsis: "This is synopsis",
-		 image: "/ocean2.jpg",
-		 slug: "blogpost1",
-		 tags: ["Destinations", "Boat projects"]
-		 },
+		{
+			title: 'How to tie a bowline',
+			synopsis: 'This is synopsis and it can be of different length',
+			image: '/bowline.jpg',
+			slug: 'how-to-tie-a-bowline',
+			tags: ['Sailing'],
+			publicationDate: new Date('2022-04-11')
+		},
+		{
+			title: 'Blogpost1',
+			synopsis: 'Looking at this blogpost you might learn something new, it is very interesting',
+			image: '/ocean2.jpg',
+			slug: 'blogpost1',
+			tags: ['Boat projects'],
+			publicationDate: new Date('2022-04-11')
+		},
+		{
+			title: 'This is test',
+			synopsis:
+				'Diam, vulputate ut pharetra sit amet, aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean.',
+			image: '/ocean2.jpg',
+			slug: 'blogpost1',
+			tags: ['Destinations'],
+			publicationDate: new Date('2022-04-11')
+		},
+		{
+			title: 'Important blog',
+			synopsis: 'This is synopsis',
+			image: '/ocean2.jpg',
+			slug: 'blogpost1',
+			tags: ['Boat projects'],
+			publicationDate: new Date('2022-04-11')
+		},
+		{
+			title: 'Blogpost2',
+			synopsis: 'This is synopsis',
+			image: '/ocean2.jpg',
+			slug: 'blogpost1',
+			tags: ['Destinations', 'Boat projects'],
+			publicationDate: new Date('2022-04-11')
+		}
 	];
 
-	let q: string = '';
+ // initiates state
+	let query: string = '';
 	const tags: string[] = [...new Set(blogposts.map((blogpost) => blogpost.tags).flat())];
-	let selectedTags: string[] = [];
+	let userSelectedTags: string[] = [];
+	$: list = filterBlogposts(blogposts, query, userSelectedTags);
 
-	const filterFunction = (list: Blogpost[], q: string, selectedTags: string[]): Blogpost[] => {
-		console.log(selectedTags);
-		if (selectedTags.length == 0) {
-			return list.filter((el) => el.title.toLowerCase().indexOf(q.toLowerCase()) !== -1);
-		}
-		return list.filter(
-			(el) =>
-				el.title.toLowerCase().indexOf(q.toLowerCase()) !== -1 &&
-				el.tags.map((tag) => selectedTags.indexOf(tag) !== -1).indexOf(true) !== -1
+	function filterBlogposts(blogposts: Blogpost[], query: string, selectedTags: string[]): Blogpost[] {
+        let filteredBlogposts = blogposts.filter(
+            (blogpost) => blogpost.title.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+
+        if (selectedTags.length == 0) {
+            return filteredBlogposts;
+        }
+
+		return filteredBlogposts.filter(
+			(blogpost) => blogpost.tags.map((tag) => selectedTags.indexOf(tag) !== -1).indexOf(true) !== -1
 		);
-	};
+	}
 
 	function selectTag(tag: string): void {
-		selectedTags.push(tag);
-		selectedTags = selectedTags;
+		userSelectedTags.push(tag);
+		userSelectedTags = userSelectedTags;
 	}
 
 	function removeSelectedTag(tag: string): void {
-		selectedTags.splice(selectedTags.indexOf(tag), 1);
-		selectedTags = selectedTags;
+		userSelectedTags.splice(userSelectedTags.indexOf(tag), 1);
+		userSelectedTags = userSelectedTags;
 	}
-
-	$: list = filterFunction(blogposts, q, selectedTags);
 
 </script>
 
@@ -81,12 +97,12 @@
 			<ul>
 				<li>
 					<span>Search: </span>
-					<input bind:value={q} type="text" class="search" />
+					<input bind:value={query} type="text" class="search" />
 				</li>
 				<li>
 					<span>Topics: </span>
 					{#each tags as tag}
-						{#if selectedTags.includes(tag)}
+						{#if userSelectedTags.includes(tag)}
 							<button class="tag active" on:click={() => removeSelectedTag(tag)}>{tag}</button>
 						{:else}
 							<button class="tag inactive" on:click={() => selectTag(tag)}>{tag}</button>
