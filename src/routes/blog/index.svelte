@@ -1,101 +1,27 @@
 <script type="text/javascript" lang="ts">
 	import { fade } from 'svelte/transition';
 	import BlogpostThumbnail from '../../components/BlogpostThumbnail.svelte';
-
-	type slug = string;
-
-	type Blogpost = {
-		title: string;
-		synopsis: string;
-		image: string;
-		slug: slug;
-		tags?: string[];
-		publicationDate: Date;
-	};
-
-	// Mock data for blogposts
-	let blogposts: Blogpost[] = [
-		{
-			title: 'How to tie a bowline',
-			synopsis: 'This is synopsis and it can be of different length',
-			image: '/bowline.jpg',
-			slug: 'how-to-tie-a-bowline',
-			tags: ['Sailing'],
-			publicationDate: new Date('2022-04-11')
-		},
-		{
-			title: 'Blogpost1',
-			synopsis: 'Looking at this blogpost you might learn something new, it is very interesting',
-			image: '/ocean2.jpg',
-			slug: 'blogpost1',
-			tags: ['Boat projects'],
-			publicationDate: new Date('2022-04-11')
-		},
-		{
-			title: 'This is test',
-			synopsis:
-				'Diam, vulputate ut pharetra sit amet, aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean.',
-			image: '/ocean2.jpg',
-			slug: 'blogpost1',
-			tags: ['Destinations'],
-			publicationDate: new Date('2022-04-11')
-		},
-		{
-			title: 'Important blog',
-			synopsis: 'This is synopsis',
-			image: '/ocean2.jpg',
-			slug: 'blogpost1',
-			tags: ['Boat projects'],
-			publicationDate: new Date('2022-04-11')
-		},
-		{
-			title: 'Blogpost2',
-			synopsis: 'This is synopsis',
-			image: '/ocean2.jpg',
-			slug: 'blogpost1',
-			tags: ['Destinations', 'Boat projects'],
-			publicationDate: new Date('2022-04-11')
-		}
-	];
+ 	import { blogposts } from './mockData'
+ 	import { filterBlogposts } from './filter'
 
 	// initiates state
 	let query: string = '';
 	const tags: string[] = [...new Set(blogposts.map((blogpost) => blogpost.tags).flat())];
 	let selectedTags: string[] = [];
+
 	$: list = filterBlogposts(blogposts, query, selectedTags);
 
-	function filterByQuery(list: Blogpost[], query: string): Blogpost[] {
-		return list.filter(
-			(blogpost): boolean => blogpost.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
-		);
-	}
+function selectTag(tag: string): void {
+    selectedTags.push(tag);
+    // Assigning to trigger update
+    selectedTags = selectedTags;
+}
 
-	function filterByTags(list: Blogpost[], selectedTags: string[]): Blogpost[] {
-		if (selectedTags.length == 0) {
-			return list;
-		}
-
-		return list.filter(
-			(blogpost): boolean =>
-				blogpost.tags.map((tag) => selectedTags.indexOf(tag) !== -1).indexOf(true) !== -1
-		);
-	}
-
-	function filterBlogposts(blogposts: Blogpost[], query: string, tags: string[]): Blogpost[] {
-		return filterByQuery(filterByTags(blogposts, tags), query);
-	}
-
-	function selectTag(tag: string): void {
-		selectedTags.push(tag);
-        // Assigning to trigger update
-		selectedTags = selectedTags;
-	}
-
-	function removeSelectedTag(tag: string): void {
-		selectedTags.splice(selectedTags.indexOf(tag), 1);
-        // Assigning to trigger update
-		selectedTags = selectedTags;
-	}
+function removeSelectedTag(tag: string): void {
+    selectedTags.splice(selectedTags.indexOf(tag), 1);
+    // Assigning to trigger update
+    selectedTags = selectedTags;
+}
 
 </script>
 
