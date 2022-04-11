@@ -2,7 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import BlogpostThumbnail from '../../components/BlogpostThumbnail.svelte';
 
-    type slug = string;
+	type slug = string;
 
 	type Blogpost = {
 		title: string;
@@ -58,33 +58,43 @@
 		}
 	];
 
- // initiates state
+	// initiates state
 	let query: string = '';
 	const tags: string[] = [...new Set(blogposts.map((blogpost) => blogpost.tags).flat())];
-	let userSelectedTags: string[] = [];
-	$: list = filterBlogposts(blogposts, query, userSelectedTags);
+	let selectedTags: string[] = [];
+	$: list = filterBlogposts(blogposts, query, selectedTags);
 
-	function filterBlogposts(blogposts: Blogpost[], query: string, selectedTags: string[]): Blogpost[] {
-        let filteredBlogposts = blogposts.filter(
-            (blogpost) => blogpost.title.toLowerCase().indexOf(query.toLowerCase()) !== -1);
-
-        if (selectedTags.length == 0) {
-            return filteredBlogposts;
-        }
-
-		return filteredBlogposts.filter(
-			(blogpost) => blogpost.tags.map((tag) => selectedTags.indexOf(tag) !== -1).indexOf(true) !== -1
+	function filterByQuery(list: Blogpost[], query: string): Blogpost[] {
+		return list.filter(
+			(blogpost): boolean => blogpost.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
 		);
 	}
 
+	function filterByTags(list: Blogpost[], selectedTags: string[]): Blogpost[] {
+		if (selectedTags.length == 0) {
+			return list;
+		}
+
+		return list.filter(
+			(blogpost): boolean =>
+				blogpost.tags.map((tag) => selectedTags.indexOf(tag) !== -1).indexOf(true) !== -1
+		);
+	}
+
+	function filterBlogposts(blogposts: Blogpost[], query: string, tags: string[]): Blogpost[] {
+		return filterByQuery(filterByTags(blogposts, tags), query);
+	}
+
 	function selectTag(tag: string): void {
-		userSelectedTags.push(tag);
-		userSelectedTags = userSelectedTags;
+		selectedTags.push(tag);
+        // Assigning to trigger update
+		selectedTags = selectedTags;
 	}
 
 	function removeSelectedTag(tag: string): void {
-		userSelectedTags.splice(userSelectedTags.indexOf(tag), 1);
-		userSelectedTags = userSelectedTags;
+		selectedTags.splice(selectedTags.indexOf(tag), 1);
+        // Assigning to trigger update
+		selectedTags = selectedTags;
 	}
 
 </script>
@@ -102,7 +112,7 @@
 				<li>
 					<span>Topics: </span>
 					{#each tags as tag}
-						{#if userSelectedTags.includes(tag)}
+						{#if selectedTags.includes(tag)}
 							<button class="tag active" on:click={() => removeSelectedTag(tag)}>{tag}</button>
 						{:else}
 							<button class="tag inactive" on:click={() => selectTag(tag)}>{tag}</button>
