@@ -10,7 +10,7 @@
 <Hero
     title="Sailing our Saga"
     image="/ocean2.jpg"
-    text="This is a test of a text that will fit next to the title to make the composition look great. The text needs to be formatted correctly."/>
+    text="Throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover."/>
 <div class="content">
     <Message
         title="Hi! So happy to see that you found your way to our adventure!"
