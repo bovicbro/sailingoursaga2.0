@@ -1,27 +1,26 @@
 <script type="text/javascript" lang="ts">
-	import { fade } from 'svelte/transition';
 	import BlogpostThumbnail from '../../components/BlogpostThumbnail.svelte';
- 	import { blogposts } from './mockData'
- 	import { filterBlogposts } from './filter'
+	import { blogposts } from './mockData';
+	import { filterBlogposts } from './filter';
 
 	// initiates state
 	let query: string = '';
-	const tags: string[] = [...new Set(blogposts.map((blogpost) => blogpost.tags).flat())];
 	let selectedTags: string[] = [];
+	const tags: string[] = [...new Set(blogposts.map((blogpost) => blogpost.tags).flat())];
 
-	$: list = filterBlogposts(blogposts, query, selectedTags);
+	$: filteredBlogposts = filterBlogposts(blogposts, query, selectedTags);
 
-function selectTag(tag: string): void {
-    selectedTags.push(tag);
-    // Assigning to trigger update
-    selectedTags = selectedTags;
-}
+	function selectTag(tag: string): void {
+		selectedTags.push(tag);
+		// Assigning to trigger update
+		selectedTags = selectedTags;
+	}
 
-function removeSelectedTag(tag: string): void {
-    selectedTags.splice(selectedTags.indexOf(tag), 1);
-    // Assigning to trigger update
-    selectedTags = selectedTags;
-}
+	function removeSelectedTag(tag: string): void {
+		selectedTags.splice(selectedTags.indexOf(tag), 1);
+		// Assigning to trigger update
+		selectedTags = selectedTags;
+	}
 
 </script>
 
@@ -49,10 +48,10 @@ function removeSelectedTag(tag: string): void {
 		</div>
 	</div>
 	<div class="list">
-		{#if list == null}
-			<span class="info" in:fade={{ duration: 200 }}>No blogposts yet!</span>
+		{#if filteredBlogposts.length == 0}
+			<span class="info">No blogposts yet!</span>
 		{/if}
-		{#each list as blogpost}
+		{#each filteredBlogposts as blogpost}
 			<div class="listItem">
 				<BlogpostThumbnail
 					title={blogpost.title}
@@ -75,10 +74,16 @@ function removeSelectedTag(tag: string): void {
 		padding: 0;
 		margin: 0;
 	}
+
 	li {
 		list-style: none;
 		margin: 1em 0;
 	}
+
+	h2 {
+		width: 100%;
+	}
+
 	.tag {
 		margin: 0.2em;
 		font-size: 18px;
@@ -103,16 +108,6 @@ function removeSelectedTag(tag: string): void {
 		margin: 2em auto;
 	}
 
-	@media (max-width: 500px) {
-		.listHeader {
-			width: 80vw;
-		}
-	}
-
-	h2 {
-		width: 100%;
-	}
-
 	.list {
 		display: flex;
 		margin: 0 auto;
@@ -125,5 +120,11 @@ function removeSelectedTag(tag: string): void {
 		min-height: 100vh;
 		max-width: 50em;
 		margin: auto;
+	}
+
+	@media (max-width: 500px) {
+		.listHeader {
+			width: 80vw;
+		}
 	}
 </style>

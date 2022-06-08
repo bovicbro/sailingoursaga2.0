@@ -13,8 +13,8 @@
     <Message title="The trick is to leave before you are ready. Careful preparation is neccessary, but if you can’t accept good enough you might never set sail. This is our story." text="Imagine heading out from shore, hoisting the main, and turning off the engine. Everything goes quiet, the breeze is playing with your hair, and the sun is warming your face. You gaze out towards the horizon and let yourself return to that daydream… “What happens way over there, beyond what you can see where the sky meets the sea?” For a few seconds you consider to just keep going, to sail further and further… Then you remind yourself that you better turn around to be home before the sun sets."/>
 </div>
 <div class="presentations">
-    <Profile name="Antonia Nilsson" img="/profile.png"/>
-    <Profile name="Victor Broman" img="/profile_victor.png"/>
+    <Profile name="Antonia Nilsson" img="/profile.png" text="Antonia loves adventure, exploring new places and doing hikes in epic landscapes. She gets things done, bakes a mean black bean brownie and is the one you interact with most on instagram."/>
+    <Profile name="Victor Broman" img="/profile_victor.png" text="Victor is a wizard at coming up with smart solutions to technical problems, cooks most meals onboard and built this website. Victor loves the feeling of freedom and stress free life onboard Saga and taking the day as it comes."/>
 </div>
 <div class="content">
     <p>This was our story for many years. We lived in our small apartment in Stockholm, spent the days in an office, met friends on the weekends - life was good. For a few weeks every summer we went sailing and fell back into that daydream.</p>

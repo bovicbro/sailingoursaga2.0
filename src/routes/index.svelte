@@ -2,7 +2,7 @@
  import Hero from "../components/Hero.svelte"
  import Message from "../components/Message.svelte"
  import Image from "../components/Image.svelte"
- import Quote from "../components/Quote.svelte"
+ // import Quote from "../components/Quote.svelte"
  import SubscribeForm from "../components/SubscribeForm.svelte"
 </script>
 
